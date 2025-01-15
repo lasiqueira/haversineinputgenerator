@@ -15,7 +15,7 @@ struct Point
     double y1;
 };
 
-double GenerateRandomNumber();
+double GenerateRandomNumber(uint8_t bounds);
 
 double GenerateRandomNumber(uint8_t bounds)
 {
@@ -68,7 +68,10 @@ int main(int argc, char* argv[])
     for(uint64_t i = 0; i < num_points; i++)
     {
         points.emplace_back(GenerateRandomNumber(X), GenerateRandomNumber(Y), GenerateRandomNumber(X), GenerateRandomNumber(Y));
+        
+        #ifdef DEBUG
         std::cout << "Point " << i << ": (" << points[i].x0 << ", " << points[i].y0 << ") -> (" << points[i].x1 << ", " << points[i].y1 << ")" << std::endl;
+        #endif
 
     }
 
