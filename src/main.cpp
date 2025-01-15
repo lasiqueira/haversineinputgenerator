@@ -67,13 +67,8 @@ int main(int argc, char* argv[])
     points.reserve(num_points);
     for(uint64_t i = 0; i < num_points; i++)
     {
-        Point p;
-        p.x0 = GenerateRandomNumber(X);
-        p.y0 = GenerateRandomNumber(Y);
-        p.x1 = GenerateRandomNumber(X);
-        p.y1 = GenerateRandomNumber(Y);
-        points.emplace_back(p);
-        std::cout << "Point " << i << ": (" << p.x0 << ", " << p.y0 << ") -> (" << p.x1 << ", " << p.y1 << ")" << std::endl;
+        points.emplace_back(GenerateRandomNumber(X), GenerateRandomNumber(Y), GenerateRandomNumber(X), GenerateRandomNumber(Y));
+        std::cout << "Point " << i << ": (" << points[i].x0 << ", " << points[i].y0 << ") -> (" << points[i].x1 << ", " << points[i].y1 << ")" << std::endl;
 
     }
 
